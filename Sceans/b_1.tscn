@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bhf8n2rgy72bi"]
+[gd_scene load_steps=12 format=3 uid="uid://bhf8n2rgy72bi"]
 
 [ext_resource type="Script" path="res://Sceans/b_1/b_1.gd" id="1_6fdqo"]
 [ext_resource type="Texture2D" uid="uid://cc2v6prkhshp5" path="res://Assets/Bundel/stringstar fields/tileset.png" id="2_xhjxb"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://tesrpjqdoggf" path="res://Assets/Bundel/stringstar fields/background_1.png" id="5_mwh80"]
 [ext_resource type="Texture2D" uid="uid://cpcaijcar80eq" path="res://Assets/Bundel/stringstar fields/background_2.png" id="6_3itrx"]
 [ext_resource type="Script" path="res://Sceans/Gm.gd" id="7_1vniv"]
+[ext_resource type="AudioStream" uid="uid://cvp52hxf86q3m" path="res://Assets/Music/Pokemon FireRedLeafGreen- Pallet Town [ ezmp3.cc ].mp3" id="8_so84r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y86lw"]
 texture = ExtResource("2_xhjxb")
@@ -495,7 +496,7 @@ texture = ExtResource("4_pyefg")
 [node name="1" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-23, -40)
 scale = Vector2(1.33503, 1.37459)
-motion_mirroring = Vector2(100, 0)
+motion_mirroring = Vector2(180, 0)
 
 [node name="Background1" type="Sprite2D" parent="ParallaxBackground/1"]
 z_index = -1
@@ -506,7 +507,7 @@ texture = ExtResource("5_mwh80")
 [node name="2" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(0, -40)
 scale = Vector2(1.33503, 1.37459)
-motion_mirroring = Vector2(100, 0)
+motion_mirroring = Vector2(180, 0)
 
 [node name="Background3" type="Sprite2D" parent="ParallaxBackground/2"]
 position = Vector2(164.041, 68.384)
@@ -536,5 +537,10 @@ position = Vector2(768, 278)
 scale = Vector2(1.52571, 1.52571)
 texture = ExtResource("6_3itrx")
 flip_v = true
+
+[node name="bg_miusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_so84r")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="body_entered" from="kill_zone" to="." method="_on_kill_zone_body_entered"]

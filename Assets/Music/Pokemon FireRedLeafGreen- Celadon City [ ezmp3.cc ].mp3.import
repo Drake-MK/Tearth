@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://da6yo6ndpj37k"
+path="res://.godot/imported/Pokemon FireRedLeafGreen- Celadon City [ ezmp3.cc ].mp3-9d54c0a2114bd08cbcd8a7b3b963e88e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Pokemon FireRedLeafGreen- Celadon City [ ezmp3.cc ].mp3"
+dest_files=["res://.godot/imported/Pokemon FireRedLeafGreen- Celadon City [ ezmp3.cc ].mp3-9d54c0a2114bd08cbcd8a7b3b963e88e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
