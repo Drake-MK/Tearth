@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://17stsm161f0d"
+path="res://.godot/imported/sword slash (sound effects) __ mani creation __ - Become a better you.mp3-791de0adb8e2595689b91d95193cd71f.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/sword slash (sound effects) __ mani creation __ - Become a better you.mp3"
+dest_files=["res://.godot/imported/sword slash (sound effects) __ mani creation __ - Become a better you.mp3-791de0adb8e2595689b91d95193cd71f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

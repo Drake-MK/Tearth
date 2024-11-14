@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://diul7sp6eyevr"
+path="res://.godot/imported/side slash.wav-ae5860999a88afc0d557f9a99f19dec2.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/side slash.wav"
+dest_files=["res://.godot/imported/side slash.wav-ae5860999a88afc0d557f9a99f19dec2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

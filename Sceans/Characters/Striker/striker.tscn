@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://c2mdgyhxp4cgr"]
+[gd_scene load_steps=14 format=3 uid="uid://c2mdgyhxp4cgr"]
 
 [ext_resource type="Script" path="res://Sceans/Characters/Striker/striker.gd" id="1_atijb"]
 [ext_resource type="Texture2D" uid="uid://d05r4k18rd8c7" path="res://Assets/Bundel/DarkSamuraiAssets/DarkSamurai (64x64).png" id="2_wdp64"]
 [ext_resource type="Script" path="res://Sceans/Characters/Striker/Camera2D.gd" id="3_1yf3r"]
+[ext_resource type="AudioStream" uid="uid://diul7sp6eyevr" path="res://Assets/SFX/side slash.wav" id="5_c5w35"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y2bcg"]
 
@@ -150,6 +151,8 @@ libraries = {
 }
 autoplay = "idle"
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationPlayer"]
+
 [node name="main" type="Sprite2D" parent="."]
 texture = ExtResource("2_wdp64")
 hframes = 14
@@ -157,5 +160,10 @@ vframes = 8
 frame = 28
 
 [node name="dash_timer" type="Timer" parent="."]
+
+[node name="side swing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_c5w35")
+volume_db = 24.0
+pitch_scale = 1.16
 
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]

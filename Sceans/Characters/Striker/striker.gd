@@ -2,7 +2,7 @@ extends CharacterBody2D
 @onready var anim =  $AnimationPlayer
 @onready var player = $"."
 @onready var dash_dir = $main/RayCast2D
-
+@onready var side_swing = $"side swing"
 
 
 const SPEED = 150.0
@@ -47,6 +47,12 @@ func _physics_process(delta):
 		anim.play("idle")
 	if Input.is_action_just_pressed("shoot") :
 		anim.play(["l_atk", "r_atk"].pick_random())
+		
+		var random_pitch = randf_range(0.5, 1.0)  # Randomly pick a value
+		side_swing.pitch_scale = random_pitch
+		print("Selected Pitch Scale: ", random_pitch)  # Debugging line
+		side_swing.play()
+		
 		
 	if Input.is_action_just_pressed("dash"):
 		dashing = true

@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://bo7igfa2yopvt"]
+
+[ext_resource type="Texture2D" uid="uid://6t2n3es511t6" path="res://Assets/Bundel/Ball and Chain Bot/Ball and Chain Bot/idle.png" id="1_2re4o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov476"]
+atlas = ExtResource("1_2re4o")
+region = Rect2(0, 0, 126, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ygfw"]
+atlas = ExtResource("1_2re4o")
+region = Rect2(0, 39, 126, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhk5w"]
+atlas = ExtResource("1_2re4o")
+region = Rect2(0, 78, 126, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3tw2"]
+atlas = ExtResource("1_2re4o")
+region = Rect2(0, 117, 126, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ha32"]
+atlas = ExtResource("1_2re4o")
+region = Rect2(0, 156, 126, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qijma"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ov476")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ygfw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhk5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3tw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ha32")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4uur7"]
+radius = 7.0
+height = 14.0
+
+[node name="Chain Bot" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_qijma")
+animation = &"idle"
+frame_progress = 0.558227
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 2)
+shape = SubResource("CapsuleShape2D_4uur7")
