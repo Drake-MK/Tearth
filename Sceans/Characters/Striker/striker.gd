@@ -44,14 +44,12 @@ func _physics_process(delta):
 		$main.flip_h = true
 
 	if not Input.is_anything_pressed():
+		
 		anim.play("idle")
 	if Input.is_action_just_pressed("shoot") :
 		anim.play(["l_atk", "r_atk"].pick_random())
+		play_sword_sound()
 		
-		var random_pitch = randf_range(0.5, 1.0)  # Randomly pick a value
-		side_swing.pitch_scale = random_pitch
-		print("Selected Pitch Scale: ", random_pitch)  # Debugging line
-		side_swing.play()
 		
 		
 	if Input.is_action_just_pressed("dash"):
@@ -69,3 +67,8 @@ func _physics_process(delta):
 func _on_dash_timer_timeout():
 	pass # Replace with function body.
 	dashing = false
+
+func play_sword_sound():
+	var random_pitch = randf_range(0.5, 1.0)  # Randomly pick a value
+	side_swing.pitch_scale = random_pitch
+	side_swing.play()

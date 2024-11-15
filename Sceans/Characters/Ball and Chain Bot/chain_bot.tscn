@@ -1,6 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://bo7igfa2yopvt"]
+[gd_scene load_steps=13 format=3 uid="uid://bo7igfa2yopvt"]
 
+[ext_resource type="Script" path="res://Sceans/Characters/Ball and Chain Bot/chain_bot.gd" id="1_2qv6o"]
 [ext_resource type="Texture2D" uid="uid://6t2n3es511t6" path="res://Assets/Bundel/Ball and Chain Bot/Ball and Chain Bot/idle.png" id="1_2re4o"]
+[ext_resource type="Texture2D" uid="uid://iqbu3nvnf8h7" path="res://Assets/Bundel/Ball and Chain Bot/Ball and Chain Bot/hit.png" id="1_8qnfn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_runry"]
+atlas = ExtResource("1_8qnfn")
+region = Rect2(0, 0, 126, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ws3v"]
+atlas = ExtResource("1_8qnfn")
+region = Rect2(0, 39, 126, 39)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ov476"]
 atlas = ExtResource("1_2re4o")
@@ -24,6 +34,20 @@ region = Rect2(0, 156, 126, 39)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qijma"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_runry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ws3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_runry")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ov476")
@@ -50,13 +74,29 @@ radius = 7.0
 height = 14.0
 
 [node name="Chain Bot" type="CharacterBody2D"]
+z_index = -1
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_2qv6o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_qijma")
-animation = &"idle"
-frame_progress = 0.558227
+animation = &"hit"
+autoplay = "idle"
+frame = 2
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(3, 2)
 shape = SubResource("CapsuleShape2D_4uur7")
+
+[node name="body" type="Area2D" parent="."]
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="body"]
+polygon = PackedVector2Array(-3, -9, -5, -2, -5, 2, -3, 3, -3, 6, -2, 8, 0, 10, 0, 12, 1, 12, 1, 10, 5, 10, 5, 12, 6, 12, 6, 10, 7, 10, 7, 9, 8, 10, 8, 9, 10, 8, 10, 4, 10, 0, 8, -6, 8, -7, 4, -8, 3, -6, 2, -6, 2, -8, 0, -10)
+
+[connection signal="area_entered" from="body" to="." method="_on_body_area_entered"]

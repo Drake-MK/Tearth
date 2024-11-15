@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bhf8n2rgy72bi"]
+[gd_scene load_steps=13 format=3 uid="uid://bhf8n2rgy72bi"]
 
 [ext_resource type="Script" path="res://Sceans/b_1/b_1.gd" id="1_6fdqo"]
 [ext_resource type="Texture2D" uid="uid://cc2v6prkhshp5" path="res://Assets/Bundel/stringstar fields/tileset.png" id="2_xhjxb"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cpcaijcar80eq" path="res://Assets/Bundel/stringstar fields/background_2.png" id="6_3itrx"]
 [ext_resource type="Script" path="res://Sceans/Gm.gd" id="7_1vniv"]
 [ext_resource type="AudioStream" uid="uid://cvp52hxf86q3m" path="res://Assets/Music/Pokemon FireRedLeafGreen- Pallet Town [ ezmp3.cc ].mp3" id="8_so84r"]
+[ext_resource type="PackedScene" uid="uid://bo7igfa2yopvt" path="res://Sceans/Characters/Ball and Chain Bot/chain_bot.tscn" id="9_apmbu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y86lw"]
 texture = ExtResource("2_xhjxb")
@@ -542,5 +543,9 @@ flip_v = true
 stream = ExtResource("8_so84r")
 volume_db = -20.0
 autoplay = true
+
+[node name="Chain Bot" parent="." instance=ExtResource("9_apmbu")]
+position = Vector2(82, 111)
+scale = Vector2(2.66348, 2.66348)
 
 [connection signal="body_entered" from="kill_zone" to="." method="_on_kill_zone_body_entered"]

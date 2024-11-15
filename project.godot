@@ -52,8 +52,9 @@ none={
 
 [layer_names]
 
-2d_physics/layer_1="player detectors to be placed on"
+2d_physics/layer_1="player ye chu sakta hai"
 2d_physics/layer_2="player yaha pe hai"
+2d_physics/layer_3="enemy yaha hai"
 
 [rendering]
 
