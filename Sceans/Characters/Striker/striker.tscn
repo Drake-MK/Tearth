@@ -179,10 +179,10 @@ tracks/2/path = NodePath("sword/sword area/l_attack:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [true, false, false]
+"values": [true, false, false, true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false

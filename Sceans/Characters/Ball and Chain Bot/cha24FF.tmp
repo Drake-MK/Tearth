@@ -280,6 +280,11 @@ polygon = PackedVector2Array(-3, -9, -5, -2, -5, 2, -3, 3, -3, 6, -2, 8, 0, 10, 
 collision_layer = 0
 collision_mask = 65535
 
+[node name="RayCast2D" type="RayCast2D" parent="detect"]
+position = Vector2(8.88178e-16, 10)
+rotation = 4.71239
+scale = Vector2(1.17356, 1.17356)
+
 [node name="d" type="CollisionShape2D" parent="detect"]
 scale = Vector2(5.91439, 5.91439)
 shape = SubResource("CircleShape2D_phlos")

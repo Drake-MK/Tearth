@@ -52,9 +52,10 @@ none={
 
 [layer_names]
 
-2d_physics/layer_1="player ye chu sakta hai"
+2d_physics/layer_1="tilemap and objects"
 2d_physics/layer_2="player yaha pe hai"
 2d_physics/layer_3="enemy yaha hai"
+2d_physics/layer_4="Npc"
 
 [rendering]
 
