@@ -313,6 +313,7 @@ pitch_scale = 1.16
 
 [node name="sword area" type="Area2D" parent="sword" groups=["sword"]]
 scale = Vector2(2.43028, 2.78802)
+collision_layer = 2
 collision_mask = 5
 script = ExtResource("5_2o8kv")
 

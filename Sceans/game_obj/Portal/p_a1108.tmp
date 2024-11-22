@@ -1,0 +1,140 @@
+[gd_scene load_steps=9 format=3 uid="uid://c53656yvt4jl3"]
+
+[ext_resource type="Texture2D" uid="uid://dps6beq072wdc" path="res://Assets/Bundel/Portal Monolitic 3.0/Pixel Art Asset - Portal Monolitic 3.0/portal/_PortalOffline.png" id="1_ly7d5"]
+[ext_resource type="Script" path="res://Sceans/game_obj/Portal/p_a.gd" id="2_7bvds"]
+[ext_resource type="Texture2D" uid="uid://cqiq033hm2t4e" path="res://Assets/Bundel/Portal Monolitic 3.0/Pixel Art Asset - Portal Monolitic 3.0/portal/_PortalBasic.png" id="3_mleog"]
+[ext_resource type="AudioStream" uid="uid://cpenl3g6fvcsn" path="res://Assets/SFX/PORTAL - Sound Effect.mp3" id="4_ubgfe"]
+[ext_resource type="Texture2D" uid="uid://c33qv1r77bpuc" path="res://Assets/Bundel/Portal Monolitic 3.0/Pixel Art Asset - Portal Monolitic 3.0/monolith/animation/monolith_animation_sheet.png" id="5_v8nyw"]
+
+[sub_resource type="Animation" id="Animation_qd6hm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PortalBasic:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MonolithL:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MonolithR:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_lbl5j"]
+resource_name = "activate"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PortalBasic:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MonolithL:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 2.4, 2.8, 3.2, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MonolithR:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2, 2.4, 2.8, 3.2, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"passs"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_br8j6"]
+_data = {
+"RESET": SubResource("Animation_qd6hm"),
+"activate": SubResource("Animation_lbl5j")
+}
+
+[node name="P_A" type="Sprite2D"]
+texture = ExtResource("1_ly7d5")
+script = ExtResource("2_7bvds")
+
+[node name="PortalBasic" type="Sprite2D" parent="."]
+texture = ExtResource("3_mleog")
+
+[node name="portal" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ubgfe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_br8j6")
+}
+
+[node name="MonolithL" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-110, -23)
+scale = Vector2(1.2089, 1.2089)
+texture = ExtResource("5_v8nyw")
+flip_h = true
+vframes = 6
+region_enabled = true
+region_rect = Rect2(0, 0, 56, 1016)
+
+[node name="MonolithR" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(102, -24)
+scale = Vector2(1.2089, 1.2089)
+texture = ExtResource("5_v8nyw")
+vframes = 6
+region_enabled = true
+region_rect = Rect2(0, 0, 56, 1016)

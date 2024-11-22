@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdf1ey5hdqvy3"]
+
+[ext_resource type="Texture2D" uid="uid://cqiq033hm2t4e" path="res://Assets/Bundel/Portal Monolitic 3.0/Pixel Art Asset - Portal Monolitic 3.0/portal/_PortalBasic.png" id="1_8vbvc"]
+
+[node name="P_C" type="Sprite2D"]
+texture = ExtResource("1_8vbvc")

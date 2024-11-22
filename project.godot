@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Tearth"
-run/main_scene="res://Sceans/b_1.tscn"
+run/main_scene="res://Sceans/b_1/b_1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -53,7 +53,7 @@ none={
 [layer_names]
 
 2d_physics/layer_1="tilemap and objects"
-2d_physics/layer_2="player yaha pe hai"
+2d_physics/layer_2="player aur uski sari chize yaha pe hai"
 2d_physics/layer_3="enemy yaha hai"
 2d_physics/layer_4="Npc"
 
