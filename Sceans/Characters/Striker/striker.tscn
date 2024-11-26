@@ -306,8 +306,8 @@ frame = 28
 
 [node name="side swing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_c5w35")
-volume_db = 24.0
-pitch_scale = 1.16
+volume_db = -1.0
+pitch_scale = 1.4
 
 [node name="sword" type="Node2D" parent="."]
 

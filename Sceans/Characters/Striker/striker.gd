@@ -69,6 +69,6 @@ func _on_dash_timer_timeout():
 	dashing = false
 
 func play_sword_sound():
-	var random_pitch = randf_range(0.5, 1.0)  # Randomly pick a value
+	var random_pitch = randf_range(0.54, 1.4)  # Randomly pick a value
 	side_swing.pitch_scale = random_pitch
 	side_swing.play()
