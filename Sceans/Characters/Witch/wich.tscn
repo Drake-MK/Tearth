@@ -320,3 +320,4 @@ collision_mask = 15
 shape = SubResource("CircleShape2D_fwl5g")
 
 [connection signal="body_entered" from="Detect player/Detect" to="." method="_on_detect_body_entered"]
+[connection signal="body_exited" from="Detect player/Detect" to="." method="_on_detect_body_exited"]
