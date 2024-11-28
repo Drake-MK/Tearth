@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cskt0vv8nmavw"]
+[gd_scene load_steps=39 format=3 uid="uid://cskt0vv8nmavw"]
 
 [ext_resource type="Texture2D" uid="uid://dqtkpyawbk5dy" path="res://Assets/Bundel/Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0010_1.png" id="1_6yjpl"]
 [ext_resource type="Texture2D" uid="uid://ctq68j8g6ssre" path="res://Assets/Bundel/Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0009_2.png" id="2_u3nef"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://c2mdgyhxp4cgr" path="res://Sceans/Characters/Striker/striker.tscn" id="13_porde"]
 [ext_resource type="Texture2D" uid="uid://bmy4xeah5h8on" path="res://Assets/Bundel/Mossy Assets/Mossy Tileset/Mossy - TileSet.png" id="14_i81t6"]
 [ext_resource type="Texture2D" uid="uid://1xculuamudix" path="res://Assets/Bundel/stringstar fields/wp2832013.png" id="14_kajor"]
+[ext_resource type="PackedScene" uid="uid://3uwn3v8j1thi" path="res://Sceans/game_obj/fog/Fog.tscn" id="16_bsfsk"]
 [ext_resource type="AudioStream" uid="uid://clqaafcjtcbt3" path="res://Assets/Music/emerald.mp3" id="17_vsraf"]
 [ext_resource type="Texture2D" uid="uid://cwxrwucr2d2wc" path="res://Assets/Bundel/Mossy Assets/Mossy Tileset/Mossy - FloatingPlatforms.png" id="18_87ady"]
 [ext_resource type="Texture2D" uid="uid://d18rruhg1s5vx" path="res://Sceans/game_obj/DayNightCycke/tilegrad.tres" id="19_6hk2m"]
@@ -3624,7 +3625,9 @@ rotation = -1.56523
 texture = ExtResource("14_kajor")
 
 [node name="striker" parent="." instance=ExtResource("13_porde")]
-position = Vector2(138, 317)
+position = Vector2(136, 334)
+
+[node name="ParallaxBackground2" parent="striker" instance=ExtResource("16_bsfsk")]
 
 [node name="GM" type="Node" parent="."]
 script = ExtResource("13_4siot")
