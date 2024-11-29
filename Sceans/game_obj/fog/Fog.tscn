@@ -2,12 +2,14 @@
 
 [ext_resource type="Shader" path="res://Sceans/game_obj/fog/Fog.gdshader" id="1_5gb7m"]
 [ext_resource type="Script" path="res://Sceans/game_obj/fog/foggrad.gd" id="2_lmllv"]
-[ext_resource type="Texture2D" uid="uid://dtldtim4gp20i" path="res://Sceans/game_obj/DayNightCycke/foxtexture.tres" id="3_r2vey"]
+[ext_resource type="Texture2D" uid="uid://dtldtim4gp20i" path="res://Sceans/game_obj/DayNightCycke/foxtexture.tres" id="3_fmiob"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_50ife"]
-seed = 4
-frequency = 0.0017
+noise_type = 2
+seed = 8
+frequency = 0.0019
 domain_warp_enabled = true
+metadata/_preview_in_3d_space_ = true
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_i1110"]
 width = 1152
@@ -19,7 +21,7 @@ noise = SubResource("FastNoiseLite_50ife")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7sern"]
 shader = ExtResource("1_5gb7m")
 shader_parameter/density = 0.25
-shader_parameter/speed = Vector2(0.02, 0.01)
+shader_parameter/speed = Vector2(0.05, 0.05)
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_i1110")
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
@@ -32,6 +34,5 @@ motion_mirroring = Vector2(1152, 648)
 material = SubResource("ShaderMaterial_7sern")
 offset_right = 1152.0
 offset_bottom = 648.0
-color = Color(0.541176, 0.827451, 1, 1)
 script = ExtResource("2_lmllv")
-gradient = ExtResource("3_r2vey")
+gradient = ExtResource("3_fmiob")

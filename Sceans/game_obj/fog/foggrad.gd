@@ -14,4 +14,12 @@ func _process(delta):
 	time += delta/9
 	var value = (sin(time - PI /2)+1.0)/5.0
 	self.color = gradient.gradient.sample(value)
+		 	
+	print(material)
+func set_fog_speed(new_speed: Vector2):
+	if material is ShaderMaterial:
+		material.set_shader_param("speed", new_speed)
 
+func set_fog_density(new_density: float):
+	if material is ShaderMaterial:
+		material.set_shader_param("density", new_density)
