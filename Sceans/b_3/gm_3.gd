@@ -1,6 +1,6 @@
 extends Node
 @onready var sfx = $"PokemonFireRedLeafGreen-PokemonTower"
-@onready var dark_tileset = $"../bg/CanvasModulate2"
+@onready var dark_tileset = $"../Map/Canvas"
 
 
 
