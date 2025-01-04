@@ -15,7 +15,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 	
 func _physics_process(delta):
-	var anim = anim
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta * 0.5
@@ -72,3 +72,9 @@ func play_sword_sound():
 	var random_pitch = randf_range(0.54, 1.4)  # Randomly pick a value
 	side_swing.pitch_scale = random_pitch
 	side_swing.play()
+
+func lighton():
+	$torch.visible = true
+	
+func lightoff():
+	$torch.visible = false

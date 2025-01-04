@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://c2mdgyhxp4cgr"]
+[gd_scene load_steps=18 format=3 uid="uid://c2mdgyhxp4cgr"]
 
 [ext_resource type="Script" path="res://Sceans/Characters/Striker/striker.gd" id="1_atijb"]
 [ext_resource type="Texture2D" uid="uid://d05r4k18rd8c7" path="res://Assets/Bundel/DarkSamuraiAssets/DarkSamurai (64x64).png" id="2_wdp64"]
 [ext_resource type="Script" path="res://Sceans/Characters/Striker/Camera2D.gd" id="3_1yf3r"]
 [ext_resource type="Script" path="res://Sceans/Characters/Striker/sword area.gd" id="5_2o8kv"]
 [ext_resource type="AudioStream" uid="uid://diul7sp6eyevr" path="res://Assets/SFX/side slash.wav" id="5_c5w35"]
+[ext_resource type="Texture2D" uid="uid://ds4dyyusd5e4t" path="res://Sceans/game_obj/Flame/new_compressed_texture_2d.png.tres" id="6_n3lyt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y2bcg"]
 
@@ -277,6 +278,14 @@ _data = {
 "run": SubResource("Animation_p2h85")
 }
 
+[sub_resource type="Animation" id="Animation_r1225"]
+resource_name = "glow"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gbhue"]
+_data = {
+"glow": SubResource("Animation_r1225")
+}
+
 [node name="striker" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(0.411476, 0.358678)
 collision_layer = 2
@@ -328,5 +337,21 @@ position = Vector2(-0.365, 0)
 scale = Vector2(0.411476, 0.358678)
 polygon = PackedVector2Array(-11.2643, -2.78802, 14.5817, -2.78802, 14.5817, 0, 19.4422, 0, 22.7595, 0, 24.3028, 2.78802, 29.1633, 2.78802, 29.1633, 11.1521, 26.733, 11.1521, 19.4422, 16.7281, -12.1514, 16.7281, -12.1514, 11.1521, 14.5817, 11.1521, 14.5817, 2.78802, -12.1514, 0)
 disabled = true
+
+[node name="torch" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-2.67029e-05, 3.05176e-05)
+
+[node name="torch source" type="PointLight2D" parent="torch"]
+z_index = 4
+position = Vector2(3.8147e-06, -4.57764e-05)
+energy = 3.91
+texture = ExtResource("6_n3lyt")
+texture_scale = 1.19
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="torch/torch source"]
+libraries = {
+"": SubResource("AnimationLibrary_gbhue")
+}
 
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]

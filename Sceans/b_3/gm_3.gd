@@ -2,6 +2,7 @@ extends Node
 @onready var sfx = $"PokemonFireRedLeafGreen-PokemonTower"
 @onready var dark_tileset = $"../Map/Canvas"
 
+@onready var canvas_modulate_3 = $"../ParallaxBackground/CanvasModulate3"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -9,7 +10,7 @@ func _ready():
 	print(sfx.pitch_scale)
 	dark_tileset.visible = true
 	pass # Replace with function body.
-
+	canvas_modulate_3.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
