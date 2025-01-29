@@ -252,6 +252,7 @@ animations = [{
 
 [node name="Chain Bot" type="CharacterBody2D"]
 z_index = -1
+scale = Vector2(5.03419, 5.03419)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_2qv6o")

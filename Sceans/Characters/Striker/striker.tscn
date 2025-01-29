@@ -295,7 +295,7 @@ script = ExtResource("1_atijb")
 shape = SubResource("CapsuleShape2D_y2bcg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -58.5483)
+position = Vector2(0, -90.768)
 zoom = Vector2(7, 7)
 script = ExtResource("3_1yf3r")
 
